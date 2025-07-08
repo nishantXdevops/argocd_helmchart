@@ -1,7 +1,7 @@
 replicaCount: 1
 
 image:
-  repository: nginx
+  repository: nishanttdevops/basic-app
   tag: latest
   pullPolicy: IfNotPresent
 
