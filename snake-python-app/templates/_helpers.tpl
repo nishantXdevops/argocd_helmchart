@@ -3,5 +3,5 @@ snake-python-game
 {{- end }}
 
 {{- define "snake-python-game.fullname" -}}
-{{ .Release.Name }}
+snake-python-game
 {{- end }}
