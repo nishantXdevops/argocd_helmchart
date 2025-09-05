@@ -1,0 +1,14 @@
+replicaCount: 1
+
+image:
+  repository: nishanttdevops/snake-python-image
+  tag: latest
+  pullPolicy: IfNotPresent
+
+service:
+  type: NodePort   # Change to LoadBalancer if using cloud
+  port: 80
+  targetPort: 5000  # Python app usually runs on 5000, adjust if different
+  nodePort: 30080   # Optional fixed NodePort (for minikube / local)
+
+resources: {}
