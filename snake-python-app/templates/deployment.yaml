@@ -1,21 +1,21 @@
 apiVersion: apps/v1
 kind: Deployment
 metadata:
-  name: snake-python-game
+  name: {{ include "snake-python-game.fullname" . }}
   labels:
-    app: snake-python-game
+    app: {{ include "snake-python-game.name" . }}
 spec:
   replicas: {{ .Values.replicaCount }}
   selector:
     matchLabels:
-      app: snake-python-game
+      app: {{ include "snake-python-game.name" . }}
   template:
     metadata:
       labels:
-        app: snake-python-game
+        app: {{ include "snake-python-game.name" . }}
     spec:
       containers:
-        - name: snake-game
+        - name: snake-python-game
           image: "{{ .Values.image.repository }}:{{ .Values.image.tag }}"
           imagePullPolicy: {{ .Values.image.pullPolicy }}
           ports:

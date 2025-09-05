@@ -1,14 +1,14 @@
 apiVersion: v1
 kind: Service
 metadata:
-  name: {{ include "snake-python-game.fullname" . }}
+  name: {{ include "snake-python-game.fullname" . }}-svc
   labels:
     app: {{ include "snake-python-game.name" . }}
 spec:
   type: {{ .Values.service.type }}
   ports:
-  - port: {{ .Values.service.port }}
-    targetPort: {{ .Values.service.targetPort }}
-    nodePort: {{ .Values.service.nodePort | default nil }}
+    - port: {{ .Values.service.port }}
+      targetPort: {{ .Values.service.targetPort }}
+      nodePort: {{ .Values.service.nodePort }}
   selector:
     app: {{ include "snake-python-game.name" . }}
