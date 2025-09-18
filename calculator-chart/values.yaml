@@ -6,5 +6,5 @@ image:
   pullPolicy: IfNotPresent
 
 service:
-  type: ClusterIP
-  port: 80
+  type: NodePort     # 🔄 Changed from ClusterIP to NodePort
+  port: 80           # Service port exposed outside the cluster
